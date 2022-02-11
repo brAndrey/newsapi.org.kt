@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
     <color name="gren">#FF37D33E</color>
+    <color name="grenLite">#BCFBBF</color>
 
 </resources>

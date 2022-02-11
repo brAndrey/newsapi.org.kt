@@ -11,9 +11,12 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.myapplication561461084.databinding.ActivityMainBinding
 
+// https://habr.com/ru/post/336034/
+
 class MainActivity : AppCompatActivity(),TestInterface {
     private lateinit var binding: ActivityMainBinding
 
+    //https://habr.com/ru/post/520544/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +42,15 @@ class MainActivity : AppCompatActivity(),TestInterface {
         }
         binding.buttonScreen.setOnClickListener{ overActivity()}
 
+        binding.buttonThird.setOnClickListener{startActivity(Intent(this,ThirdActivity::class.java))}
+
+
     }
 
     fun overActivity() {
 
         val intent = Intent(this, SecondActivity::class.java)
+
         startActivity(intent)
 
     }

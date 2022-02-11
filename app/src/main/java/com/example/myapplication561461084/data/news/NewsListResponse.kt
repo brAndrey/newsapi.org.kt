@@ -1,4 +1,4 @@
-package com.example.myapplication561461084.data.remote.news
+package com.example.myapplication561461084.data.news
 
 data class NewsListResponse(
     val status: String,
@@ -12,7 +12,7 @@ data class NewsListResponse(
 data class NewsListItem(
     val source: List<NewsListSource>,
 
-val author:String,
+    val author:String,
     val title:String,
     val description:String,
     val url:String,
