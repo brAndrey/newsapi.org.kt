@@ -8,4 +8,6 @@ object Common {
 
     val retrofitServices:RetrofitServices
     get()=RetrofitClient.getClient(Constant.SIMPLIFIED_URL).create(RetrofitServices::class.java)
+
+
 }

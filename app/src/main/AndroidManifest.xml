@@ -10,10 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication561461084">
-        <activity android:name=".SecondActivity"></activity>
+        android:userCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_config"
+        <activity android:name=".UI.SecondActivity"></activity>
         <activity android:name=".ThirdActivity"></activity>
+        <activity android:name=".UI.FourthActivity"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

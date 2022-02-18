@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication561461084.R
 import com.example.myapplication561461084.data.simplifiedcoding.model.Movie
-import com.example.myapplication561461084.databinding.ActivityMainBinding
 import com.squareup.picasso.Picasso
 
 // class MyMovieAdapter(private val context: Context,private val movieList: MutableList<Movie>):
@@ -24,9 +23,9 @@ class MyMovieAdapter ( private val context:Context,
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         val image: ImageView = itemView.findViewById(R.id.image_movie)
-        val txt_name: TextView = itemView.findViewById(R.id.txt_name)
+        val txt_name: TextView = itemView.findViewById(R.id.txt_title)
         val txt_team: TextView = itemView.findViewById(R.id.txt_team)
-        val txt_createdby: TextView = itemView.findViewById(R.id.txt_createdby)
+        val txt_createdby: TextView = itemView.findViewById(R.id.txt_description)
 
         fun bind(listItem: Movie) {
             image.setOnClickListener {

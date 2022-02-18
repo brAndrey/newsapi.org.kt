@@ -1,19 +1,15 @@
-package com.example.myapplication561461084
+package com.example.myapplication561461084.UI
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
+import com.example.myapplication561461084.ThirdActivity
+import com.example.myapplication561461084.UI.Interface.TestInterface
 import com.example.myapplication561461084.databinding.ActivityMainBinding
 
 // https://habr.com/ru/post/336034/
 
-class MainActivity : AppCompatActivity(),TestInterface {
+class MainActivity : AppCompatActivity(), TestInterface {
     private lateinit var binding: ActivityMainBinding
 
     //https://habr.com/ru/post/520544/
@@ -42,8 +38,9 @@ class MainActivity : AppCompatActivity(),TestInterface {
         }
         binding.buttonScreen.setOnClickListener{ overActivity()}
 
-        binding.buttonThird.setOnClickListener{startActivity(Intent(this,ThirdActivity::class.java))}
+        binding.buttonThird.setOnClickListener{startActivity(Intent(this, ThirdActivity::class.java))}
 
+        binding.buttonFourth.setOnClickListener{startActivity(Intent(this, FourthActivity::class.java))}
 
     }
 

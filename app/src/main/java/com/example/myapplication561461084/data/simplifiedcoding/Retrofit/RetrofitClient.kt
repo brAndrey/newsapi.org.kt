@@ -1,5 +1,7 @@
 package com.example.myapplication561461084.data.simplifiedcoding.Retrofit
 
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -11,8 +13,16 @@ object RetrofitClient {
 
     fun getClient(baseURL:String):Retrofit{
         if (retrofit == null) {
+            val httpLoggingInterceptor = HttpLoggingInterceptor()
+            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+
+            val client = OkHttpClient.Builder()
+                .addInterceptor(httpLoggingInterceptor)
+                .build()
+
             retrofit = Retrofit.Builder()
                 .baseUrl(baseURL)
+                .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }
