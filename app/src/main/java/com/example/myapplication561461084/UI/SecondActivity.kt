@@ -8,6 +8,7 @@ import com.example.myapplication561461084.R
 import com.example.myapplication561461084.UI.Interface.TestInterface
 import com.example.myapplication561461084.data.news.Api.Interface.NewsApiService
 import com.example.myapplication561461084.data.Constant
+import com.example.myapplication561461084.data.ConstantLinks
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -27,7 +28,13 @@ class SecondActivity: AppCompatActivity(), TestInterface {
 
         compositeDisposable.dispose()
 
+
+        ConstantLinks.NEWS_BASE_URI
+
+
         //val newsApp = (this.application as? NewsApp).newsApi
+
+        (application as TestInterface).PrintString(" application as TestInterface ")
 
         //activity?.application as? QuestApp
 
@@ -42,7 +49,6 @@ class SecondActivity: AppCompatActivity(), TestInterface {
     }
 
     fun fetchQuestList(newsApiService: NewsApiService?){
-
 
             newsApiService?.let {
             compositeDisposable.add(newsApiService.NewsListResponse(Constant.API_COUNTRY, Constant.API_KEY)

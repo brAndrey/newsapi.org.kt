@@ -1,6 +1,5 @@
-package com.example.myapplication561461084.UI.ThirdActivity.Adapter
+package com.example.myapplication561461084.UI.Adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,16 +8,15 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication561461084.R
+import com.example.myapplication561461084.UI.ViewModels.SimplifiedCodingViewModel
 import com.example.myapplication561461084.data.simplifiedcoding.model.Movie
 import com.squareup.picasso.Picasso
 
-// class MyMovieAdapter(private val context: Context,private val movieList: MutableList<Movie>):
-// RecyclerView.Adapter<MyMovieAdapter.MyViewHolder>() {
 
-class MyMovieAdapter ( private val context:Context,
-                       private val movieList: MutableList<Movie>):RecyclerView.Adapter<MyMovieAdapter.MyViewHolder>() {
 
-    //class MyMovieAdapter(itemView: View):RecyclerView:ViewHolder(itemView) {    }
+class MyMovieAdapter():RecyclerView.Adapter<MyMovieAdapter.MyViewHolder>() {
+
+    private var movieList = mutableListOf<Movie>()
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
@@ -32,6 +30,7 @@ class MyMovieAdapter ( private val context:Context,
                 Toast.makeText(it.context, "нажал на ${image}", Toast.LENGTH_SHORT)
                     .show()
             }
+
             itemView.setOnClickListener {
                 Toast.makeText(it.context, "нажал на ${txt_name.text}", Toast.LENGTH_SHORT).show()
                 Toast.makeText(it.context, "нажал на ${txt_name.text}", Toast.LENGTH_SHORT).show()
@@ -39,6 +38,11 @@ class MyMovieAdapter ( private val context:Context,
         }
     }
 
+    fun refreshingMovieList(list: MutableList<Movie>){
+        movieList.clear()
+        movieList.addAll(list)
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
@@ -48,6 +52,8 @@ class MyMovieAdapter ( private val context:Context,
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
        val listItem = movieList[position]
+
+
 
         holder.bind(listItem)
 

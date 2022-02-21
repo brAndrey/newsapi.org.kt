@@ -13,12 +13,10 @@ import com.example.myapplication561461084.data.Constant
 import com.example.myapplication561461084.NotUse.SearchRepository
 import com.example.myapplication561461084.R
 import com.example.myapplication561461084.UI.Interface.FourthActivityInterface
-import com.example.myapplication561461084.UI.ThirdActivity.Adapter.FourthActivityAdapter
-import com.example.myapplication561461084.UI.ThirdActivity.Adapter.MyMovieAdapter
+import com.example.myapplication561461084.UI.Adapter.FourthActivityAdapter
 import com.example.myapplication561461084.data.news.NewsListItem
 import com.example.myapplication561461084.data.news.NewsRepozitories.NewsRepositories
 import com.example.myapplication561461084.data.news.Provider.NewsRepositoriesProvider
-import com.example.myapplication561461084.data.simplifiedcoding.model.Movie
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -32,7 +30,7 @@ class FourthActivity : AppCompatActivity(), FourthActivityInterface {
     private val compositeDisposable = CompositeDisposable()
     lateinit var layoutManager: LinearLayoutManager
     lateinit var recyclerList: RecyclerView
-    lateinit var recyclerAdapter:FourthActivityAdapter
+    lateinit var recyclerAdapter: FourthActivityAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

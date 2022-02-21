@@ -12,7 +12,8 @@ object RetrofitClient {
     private var retrofit:Retrofit?=null
 
     fun getClient(baseURL:String):Retrofit{
-        if (retrofit == null) {
+        if (retrofit == null) // этой строчкой делаем класс сиглтоном
+        {
             val httpLoggingInterceptor = HttpLoggingInterceptor()
             httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
